@@ -12,7 +12,9 @@ module.exports = {
     register: async (req, res) => {
         
         const { username, email, password } = req.body
-console.log("ALLLLLL",username,email,password);
+
+        console.log("ALLLLLL",username,email,password);
+
         if (!username || !email || !password) {
             console.log('CHECK ALLL');
             return res.status(500).json({ message: "Veuillez remplir tous les champs." });
@@ -29,7 +31,7 @@ console.log("ALLLLLL",username,email,password);
             return res.status(500).json({ message: "user not found." });
         });
 
-        console.log("--------4",user);
+        console.log("--------4", user);
 
         if (user === null) {
             bcrypt.hash(password, saltRounds, async (err, hash) => {

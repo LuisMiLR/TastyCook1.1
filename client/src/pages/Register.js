@@ -19,7 +19,7 @@ const Register = () => {
           email,
           password,
         };
-    
+        console.log('------DATA---------', data);
         if (username === '' ||email === '' || password === '') {
             alert('Merci de renseigner les champs');
         } else {

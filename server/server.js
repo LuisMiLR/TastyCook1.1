@@ -17,7 +17,7 @@ const port = process.env.PORT || 3001;
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cors({
-    origin: 'http://localhost:3000'
+    origin: '*'
 }))
 server.use('/public', express.static(path.join(__dirname, '/public')))
 
