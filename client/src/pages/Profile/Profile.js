@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { getUserInfo } from "../api/auth";
+import { getUserInfo } from "../../api/auth";
 import styles from "./Profile.module.scss";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import ProfileNav from "../Profile/components/ProfileNav";
 
 //creation de la page profile avec la requette get user info
 
@@ -32,7 +33,8 @@ const Profile = () => {
   return token != null ? (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
        <Header />
-       <div className="flex-fill container d-flex flex-column p-20">
+       <div className="d-flex flex-fill p-20">
+       <ProfileNav />
        <h1 className="my-30"> Profil </h1>
       
         <div className="d-flex flex-fill p-20">
