@@ -39,13 +39,15 @@ const AddRecipePage = () => {
             onSubmit={handleSubmit}
             encType="multipart/form-data"
           >
-            <h2 className="d-flex justify-content-center my-30">
+            <h2 className="d-flex justify-content-center my-50">
               Ajouter une recette
             </h2>
             <div className="d-flex flex-column mb-20">
+            <label htmlFor="title">Titre </label>
               <input type="text" name="title" placeholder="Ex. Grilade de..." />
             </div>
             <div className="d-flex flex-column mb-20">
+            <label htmlFor="description">Description</label>
               <input
                 type="text"
                 name="description"
@@ -53,6 +55,7 @@ const AddRecipePage = () => {
               />
             </div>
             <div className="d-flex flex-column mb-20">
+            <label htmlFor="cookingtime">Temps de préparation</label>
               <input type="text" name="cookingtime" placeholder="Ex. 15" />
             </div>
             <div className="d-flex flex-column mb-20">
@@ -67,7 +70,7 @@ const AddRecipePage = () => {
               />
             </div>
             <div className="d-flex flex-row justify-content-center align-items-center p-20">
-              <button className="btn btn-primary">Sauvegarder</button>
+              <button className="btn btn-primary my-30">Sauvegarder</button>
             </div>
           </form>
         </div>
