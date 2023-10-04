@@ -1,0 +1,12 @@
+.searchBar {
+    padding: 10px 10px;
+    border: 2px solid var(--gray-3);
+    border-radius:  20px;
+    input { 
+      outline: 0;
+      border: 0;
+    }
+    .glasses {
+      color: var(--primary-2);
+    }
+  }

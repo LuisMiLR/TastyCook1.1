@@ -1,0 +1,41 @@
+
+.recipeForm {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .card {
+      width: 80%;
+      background-color: rgb(255, 255, 255);
+      border-radius: 20px;
+      min-height: 600px;
+      margin: 90px;
+      overflow: hidden;
+      width: 600px;
+
+      
+     
+     
+  }
+  .design {
+      // flex: 1;
+      // gap: 50px;
+    
+  
+    form {
+      gap: 30px;
+  
+      input {
+        padding: 10px 15px;
+        border: 2px solid var(--gray-3);
+        border-radius: 20px;
+        width: 100%;
+      }
+    }
+     
+     button {
+        width: 50%;
+     }
+  }    
+  
+  

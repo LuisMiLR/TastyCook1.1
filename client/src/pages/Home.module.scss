@@ -20,6 +20,11 @@
     }
   }
   
+  // .body-grid {
+  //   display: grid;
+  //   grid-template-rows: auto 1fr auto;
+  // }
+  
   .contentCard {
     max-width: 1130px;
     width: 100%;
@@ -28,5 +33,9 @@
   .small {
     font-size: 12px;
     font-weight: 500;
+  }
+
+  .appContainer {
+    min-height: 100vh;
   }
 

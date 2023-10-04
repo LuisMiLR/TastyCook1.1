@@ -17,13 +17,14 @@ const port = process.env.PORT || 3001;
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cors({
-    origin: '*'
+    origin: "*"
 }))
 server.use('/public', express.static(path.join(__dirname, '/public')))
 
 // routes
 server.use('/user', routesUsers);
 server.use('/post', routesPosts);
+
 // server.use('/comment', routesComments);
 
 // server.use(
@@ -47,6 +48,15 @@ server.use('/post', routesPosts);
 //     destroy: id => models.Posts.destroy({ where: { id } })
 //   })
 // )
+
+//gestion des erreurs 404
+// server.use(({ res }) => {
+//     const message = "Erreur 404 Impossible de trouver la ressource demandée !";
+//     res.status(404).json({ message });
+//   });
+
+
+  
 
 server.listen(process.env.PORT, () => {
     console.log(`écoute du port ${process.env.PORT}`)

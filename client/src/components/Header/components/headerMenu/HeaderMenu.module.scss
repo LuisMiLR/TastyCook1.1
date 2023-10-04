@@ -12,6 +12,9 @@
               background-color: var(--primary-2);
               color: white;
           }
-  
+          &:active {
+            background-color: var(--primary-2);
+            color: rgb(163, 37, 37);
       }
   }
+}
