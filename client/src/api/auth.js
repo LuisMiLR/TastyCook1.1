@@ -58,4 +58,3 @@ export const getUserInfo = async (token) => {
 };
 
 export default getUserInfo;
-

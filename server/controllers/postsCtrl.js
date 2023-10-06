@@ -3,12 +3,12 @@ const models = require("../models");
 // //
 module.exports = {
   create: async (req, res) => {
-    const { title, description, cookingtime, img, } = req.body;
-     const authorization = req.headers["authorization"];
+    const { title, description, cookingtime, img, users_idusers } = req.body;
+    const authorization = req.headers["authorization"];
     const userId = jwtUtils.getUser(authorization);
     const image = req.file;
-console.log("-------1",image);
-    if (! title || !description) {
+
+    if (!title || !description) {
       return res
         .status(500)
         .json({ message: "Veuillez remplir tous les champs." });
@@ -19,7 +19,7 @@ console.log("-------1",image);
       description: description,
       cookingtime: cookingtime,
       img: image ? image.filename : "test.png",
-      users_id: userId,
+      users_idusers: userId,
     });
 
     if (newPost) {
@@ -98,23 +98,26 @@ console.log("-------1",image);
         .catch((e) => {
           return res
             .status(400)
-            .json({ message: "erreur lors de la suppression" });
+            .json({ message: "erreur lors e la suppression" });
         });
     }
   },
   getAllPosts: async (req, res) => {
     await models.Posts.findAll({
-      attributes: [
-        "id",
-        "title",
-        "description",
-        "cookingtime",
-        "pictures",
-        "users_id",
-      ],
+      attributes: {
+        include: [
+          "id",
+          "title",
+          "description",
+          "cookingtime",
+          "img",
+          "users_id",
+        ],
+      },
     })
       .then((posts) => {
-        return res.status(200).json({ posts: posts });
+        console.log("------&------1", posts);
+        return res.status(200).json(posts);
       })
       .catch((e) => {
         return res.status(400).json({ message: "une erreur est survenue." });

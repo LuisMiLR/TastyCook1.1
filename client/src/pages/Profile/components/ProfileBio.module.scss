@@ -1,0 +1,67 @@
+.list {
+    background-color: white;
+    border-radius: 10%;
+    border: var(--border);
+    flex: 0 0 200px;
+    padding: 80px;
+    min-height: 61vh;
+    margin-top: 5rem;
+    margin: 5rem;
+    
+    
+   
+  }
+  
+  .list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .list label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .list input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-right: 10px;
+    flex: 1;
+  }
+  
+  .list button {
+    background-color: var(--primary-2);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .list button:hover {
+    background-color: #0069d9;
+  }
+  
+  .list img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .list .cover-pic {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .list .profile-pic {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  

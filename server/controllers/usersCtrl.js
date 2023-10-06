@@ -33,8 +33,6 @@ module.exports = {
       }
     );
 
-    console.log("--------4", user);
-
     if (user === null) {
       bcrypt.hash(password, saltRounds, async (err, hash) => {
         const newUser = await models.Users.create({

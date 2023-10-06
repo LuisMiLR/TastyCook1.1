@@ -8,10 +8,11 @@
       width: 80%;
       background-color: rgb(255, 255, 255);
       border-radius: 20px;
-      min-height: 600px;
-      margin: 90px;
+
+      margin: 20px;
       overflow: hidden;
       width: 600px;
+      max-height: 63vh;
 
       
      
@@ -19,11 +20,11 @@
   }
   .design {
       // flex: 1;
-      // gap: 50px;
+     
     
   
     form {
-      gap: 30px;
+      gap: 10px;
   
       input {
         padding: 10px 15px;

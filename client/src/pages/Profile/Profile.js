@@ -4,18 +4,13 @@ import { getUserInfo } from "../../api/auth";
 import styles from "./Profile.module.scss";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import ProfileNav from "../Profile/components/ProfileNav";
-
-//creation de la page profile avec la requette get user info
+import ProfileBio from "./components/ProfileBio";
+import ProfileMesRecettes from "./components/ProfileMesRecettes";
 
 const Profile = () => {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-// affichage des infos de l'utilisateur connecté
-
-
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -30,19 +25,20 @@ const Profile = () => {
         });
     }
   }, []);
+
   return token != null ? (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
-       <Header />
-       <div className="d-flex flex-fill p-20">
-       <ProfileNav />
-       <h1 className="my-30"> Profil </h1>
-      
-        <div className="d-flex flex-fill p-20">
-          <div className="d-flex flex-column flex-fill"></div>
+      <Header />
+      <div className="d-flex flex-fill p-10">
+        <div style={{ flex: "0 0 30%" }}>
+          <ProfileBio />
+        </div>
+        <div style={{ flex: "0 0 70%" }}>
+          <ProfileMesRecettes />
         </div>
       </div>
       <Footer />
-    </div>  
+    </div>
   ) : (
     <Navigate to="/login" />
   );
