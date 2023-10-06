@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "./Login.module.scss";
-import { loginUser } from "../api/auth";
+import styles from "../Login/Login.module.scss";
+import { loginUser } from "../../api/auth";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {

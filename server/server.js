@@ -12,7 +12,7 @@ const models = require('./models');
 const path = require('path');
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT ;
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));

@@ -24,6 +24,7 @@ export const createPost = async (data, token) => {
 
 //requette get pour toutes les recettes
 export const getPosts = async () => {
+  console.log('ENV', env.API_URL);
   return await axios({
     method: "get",
     url: `${env.API_URL}/post/get-all`,

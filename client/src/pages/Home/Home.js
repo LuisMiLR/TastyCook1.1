@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import Loading from "../components/Loading/Loading";
-import Search from "../components/search/Search";
-import styles from "./Home.module.scss";
-import { getPosts } from "../api/post";
+import styles from "../Home/Home.module.scss";
+//import { Navigate } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Loading from "../../components/Loading/Loading";
+import Search from "./components/search/Search";
+import { getPosts } from "../../api/post";
+import Recipe from "./Recipe/Recipe";
 
 //creation de la page home avec la requette get all recipes
 
@@ -19,7 +20,7 @@ const Home = () => {
     console.log("START FETCHING");
     getPosts()
       .then((res) => {
-        console.log("RES", res.data);
+        console.log("RES----1", res.data);
         setPosts(res.data);
         setIsLoading(false);
       })
@@ -46,14 +47,12 @@ const Home = () => {
               {posts
                 .filter((post) => post.title.toLowerCase().startsWith(query))
                 .map((post) => (
-                  <div key={post.id} className="d-flex flex-column mb-20">
-                    <div className="d-flex flex-column mb-20">
-                      <h2>{post.title}</h2>
-                      <p>{post.description}</p>
-                      <p>{post.cookingtime}</p>
-                      <img src={`http://localhost:8080/public/upload/posts/${post.img}`} alt="post"></img>
-                    </div>
-                  </div>
+                <Recipe
+                  key={post.id}
+                  recipe={post}  
+                  img={post.img }   
+                  title={post.title}
+                />  
                 ))}
             </div>
           )}

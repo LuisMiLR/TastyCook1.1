@@ -1,7 +1,7 @@
-import Header from "../components/Header/Header";
+import Header from "../../components/Header/Header";
 import axios from "axios";
-import styles from "../pages/AddRecipePage.module.scss";
-import Footer from "../components/Footer/Footer";
+import styles from "../AddRecipePage/AddRecipePage.module.scss";
+import Footer from "../../components/Footer/Footer";
 
 const handleSubmit = async (event) => {
   event.preventDefault();

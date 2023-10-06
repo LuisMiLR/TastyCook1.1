@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Register.module.scss";
-import { registerUser } from "../api/auth";
+import { registerUser } from "../../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {

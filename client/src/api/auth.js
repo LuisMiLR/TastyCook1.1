@@ -2,8 +2,7 @@ import axios from "axios";
 import env from "react-dotenv";
 
 export const registerUser = async (data) => {
-  console.log("------------1", data);
-  // console.log("------------2",env.API_URL);
+  console.log(data);
 
   await axios({
     method: "post",

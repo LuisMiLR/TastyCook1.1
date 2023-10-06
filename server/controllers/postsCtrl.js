@@ -103,20 +103,12 @@ module.exports = {
     }
   },
   getAllPosts: async (req, res) => {
+    console.log("------postCtrl 1------");
     await models.Posts.findAll({
-      attributes: {
-        include: [
-          "id",
-          "title",
-          "description",
-          "cookingtime",
-          "img",
-          "users_id",
-        ],
-      },
+   
     })
       .then((posts) => {
-        console.log("------&------1", posts);
+        console.log("------thenPost----", posts);
         return res.status(200).json(posts);
       })
       .catch((e) => {
