@@ -4,15 +4,16 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--text-color);
-    background-color: var(--backGreen);
-  }
-
-  h1, 
-  h2,
-  h3,
-  h4 {
-    margin: 0;
-  }
+    background-color: #effbf8ac;
+    // background-image: linear-gradient(to top, #effbf8, #effcf8, #eefdf8, #eefdf8, #eefef8, #eefef8, #eefef7, #eefef7, #eefdf6, #effdf6, #effcf5, #effbf5);
+}
+h1
+h2,
+h3,
+h4
+ {
+  margin: 0;
+}
 
   * {
     box-sizing: border-box;
@@ -30,8 +31,18 @@ body {
 
   input {
     font-family: var(--font-family);
+    &:focus {
+      outline: none;
+    }
+
+
   }
   
   ::placeholder {
     font-family: var(--font-family);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }

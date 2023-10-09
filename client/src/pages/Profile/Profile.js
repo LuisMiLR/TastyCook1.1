@@ -17,7 +17,7 @@ const Profile = () => {
     if (token) {
       getUserInfo(token)
         .then((res) => {
-          setUser(res.data.user);
+          setUser(res);
           setIsLoading(false);
         })
         .catch((e) => {

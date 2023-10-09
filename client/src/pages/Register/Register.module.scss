@@ -1,6 +1,5 @@
 .register {
     height: 100vh;
-    background-color: #e9f9f0;
   
     .card {
       width: 50%;
@@ -62,6 +61,10 @@
           border: none;
           border-bottom: 1px solid lightgray;
           padding: 20px 10px;
+            &:focus {
+              outline: none;
+              border:1px solid #F4A256
+            }
           }
           
           button {

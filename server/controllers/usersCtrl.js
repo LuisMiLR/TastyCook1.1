@@ -11,16 +11,12 @@ module.exports = {
   register: async (req, res) => {
     const { username, email, password } = req.body;
 
-    console.log("ALLLLLL", username, email, password);
-
     if (!username || !email || !password) {
-      console.log("CHECK ALLL");
       return res
         .status(500)
         .json({ message: "Veuillez remplir tous les champs." });
     }
     if (!regexPassword.test(password)) {
-      console.log("PASSWORD");
       return res.status(400).json({ message: "invalid password" });
     }
     if (!validator.isEmail(email)) {
@@ -32,7 +28,6 @@ module.exports = {
         return res.status(500).json({ message: "user not found." });
       }
     );
-
     if (user === null) {
       bcrypt.hash(password, saltRounds, async (err, hash) => {
         const newUser = await models.Users.create({
@@ -55,7 +50,7 @@ module.exports = {
   },
   auth: async (req, res) => {
     const { email, password } = req.body;
-    if (email == "" || password == "") {
+    if (!email || !password) {
       return res
         .status(500)
         .json({ message: "Veuillez remplir tous les champs." });
@@ -86,7 +81,7 @@ module.exports = {
     const id = req.params.id;
     const { username, email } = req.body;
 
-    if (username == "" || email == "") {
+    if (!username || !email) {
       return res
         .status(500)
         .json({ message: "Veuillez remplir tous les champs." });
@@ -144,9 +139,5 @@ module.exports = {
       .catch((e) => {
         return res.status(400).json({ message: "Utilisateur pas trouvé" });
       });
-
-    if (userId == null || userId == -1) {
-      return res.status(400).json({ message: "Utilisateur pas authorize" });
-    }
   },
 };

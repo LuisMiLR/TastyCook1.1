@@ -48,12 +48,10 @@ export const getUserInfo = async (token) => {
     },
   })
     .then((res) => {
-      //return res.data.user
-      console.log(res);
+      console.log("---------res-------",res.data.user);
+      return res.data.user
     })
     .catch((e) => {
       console.log(e.response.data.error);
     });
 };
-
-export default getUserInfo;

@@ -7,6 +7,7 @@ import Loading from "../../components/Loading/Loading";
 import Search from "./components/search/Search";
 import { getPosts } from "../../api/post";
 import Recipe from "./Recipe/Recipe";
+import "../RecipeDetail/RecipeDetail";
 
 //creation de la page home avec la requette get all recipes
 
@@ -14,13 +15,10 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
-  console.log("HOME");
-  // const token = localStorage.getItem("token");
+
   useEffect(() => {
-    console.log("START FETCHING");
     getPosts()
       .then((res) => {
-        console.log("RES----1", res.data);
         setPosts(res.data);
         setIsLoading(false);
       })
@@ -33,8 +31,8 @@ const Home = () => {
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header />
       <div className="flex-fill container d-flex flex-column p-20">
-        <h1 className=" d-flex justify-content-center my-30">
-          Découvrez nos nouvelles recettes
+        <h1 className=" d-flex justify-content-center my-50">
+          Découvrez nos recettes délicieuses
         </h1>
         <div
           className={`card flex-fill d-flex flex-column p-20 mb-20 ${styles.contentCard}`}
@@ -45,14 +43,17 @@ const Home = () => {
           ) : (
             <div className={styles.grid}>
               {posts
-                .filter((post) => post.title.toLowerCase().startsWith(query))
+                .filter((post) => {
+                  console.log(post);
+                  return post.title.toLowerCase().startsWith(query);
+                })
                 .map((post) => (
-                <Recipe
-                  key={post.id}
-                  recipe={post}  
-                  img={post.img }   
-                  title={post.title}
-                />  
+                  <Recipe
+                    key={post.id}
+                    recipe={post}
+                    img={post.img}
+                    title={post.title}
+                  />
                 ))}
             </div>
           )}

@@ -16,7 +16,7 @@ function Search({setFilter}) {
         onInput={handleInput}
         className="flex-fill"
         type="text"
-        placeholder="Je cherche une recette"
+        placeholder="Je cherche une recette..."
       />
     </div>
   );

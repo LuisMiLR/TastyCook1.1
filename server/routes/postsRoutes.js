@@ -8,5 +8,6 @@ router.put("/:id", imageUpload.single("image"), postsCtrl.update);
 router.delete("/:id", postsCtrl.delete);
 router.get("/get-all", postsCtrl.getAllPosts);
 router.get("/get-one/:id", postsCtrl.getOnePost);
+router.get("/get-all-user", postsCtrl.getPostsByUser);
 
 module.exports = router;
