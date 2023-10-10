@@ -1,4 +1,5 @@
 const models = require("../models");
+const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtUtils = require("../middleware/jwtUtils");
@@ -7,9 +8,12 @@ const saltRounds = 10;
 const validator = require("validator");
 const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
+
+// Register
+
 module.exports = {
   register: async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password, city } = req.body;
 
     if (!username || !email || !password) {
       return res
@@ -48,6 +52,9 @@ module.exports = {
         .json({ message: "cet email existe déjà, veuillez-vous connecter." });
     }
   },
+
+  // Login
+
   auth: async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -77,6 +84,18 @@ module.exports = {
       return res.status(404).json({ error: "User does not exist" });
     }
   },
+
+  //logout
+
+  logoutUser: (req, res) => {
+    // Supprimer le JWT stocké dans le stockage local
+    localStorage.removeItem("token");
+    // Rediriger l'utilisateur vers la page de connexion ou la page d'accueil
+    res.redirect("/login");
+  },
+
+  // Update User
+
   updateUser: async (req, res) => {
     const id = req.params.id;
     const { username, email } = req.body;
@@ -102,6 +121,9 @@ module.exports = {
           .json({ message: "erreur lors de la modification" });
       });
   },
+
+  //suppression d'un user
+
   deleteUser: async (req, res) => {
     const id = req.params.id;
 
@@ -120,6 +142,9 @@ module.exports = {
         });
     }
   },
+
+  // Get All Users
+
   getAllUsers: async (req, res) => {
     await models.Users.findAll()
       .then((users) => {
@@ -129,6 +154,9 @@ module.exports = {
         return res.status(400).json({ message: "une erreur est survenue." });
       });
   },
+
+  // Get One User
+
   getUserProfile: async (req, res) => {
     const authorization = req.headers["authorization"];
     const userId = jwtUtils.getUser(authorization);
@@ -141,3 +169,4 @@ module.exports = {
       });
   },
 };
+

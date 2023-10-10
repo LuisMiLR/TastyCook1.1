@@ -1,8 +1,7 @@
 import axios from "axios";
 import env from "react-dotenv";
 
-//creation de la requette post pour la recette avec axios
-
+//Requette post recette 
 export const createPost = async (data, token) => {
   return await axios({
     method: "post",
@@ -21,7 +20,7 @@ export const createPost = async (data, token) => {
     });
 };
 
-//requette get pour toutes les recettes
+//requette get all recettes
 export const getPosts = async () => {
   return await axios({
     method: "get",
@@ -67,7 +66,7 @@ export const updatePost = async (data, postId) => {
     });
 };
 
-//requette get pour une recette par ID
+//requette get par id de recette  
 export const getPostById = async (id) => {
   return await axios({
     method: "get",
@@ -80,7 +79,7 @@ export const getPostById = async (id) => {
       console.log(e);
     });
 };
-
+//requette get all recette par id user
 export const getPostsByUser = async (token) => {
   return await axios({
     method: "get",

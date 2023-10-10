@@ -32,12 +32,12 @@ module.exports = {
   },
   
   getAllPosts: async (req, res) => {
-    console.log("------postCtrl 1------",res);
+    console.log("------postCtrl 1----",res);
     await models.Posts.findAll({
       
     })
     .then((posts) => {
-      console.log("------thenPost----", posts);
+    console.log("----thepost---",posts);
       return res.status(200).json(posts);
     })
     .catch((e) => {

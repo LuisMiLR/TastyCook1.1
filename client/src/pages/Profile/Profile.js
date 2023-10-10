@@ -29,11 +29,11 @@ const Profile = () => {
   return token != null ? (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header />
-      <div className="d-flex flex-fill p-10">
-        <div style={{ flex: "0 0 30%" }}>
+      <div className="d-flex">
+        <div style={{ flex: "0 0 20%" }}>
           <ProfileBio />
         </div>
-        <div style={{ flex: "0 0 70%" }}>
+        <div style={{ flex: "0 0 60%" }}>
           <ProfileMesRecettes />
         </div>
       </div>

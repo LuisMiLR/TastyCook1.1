@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-require('dotenv').config({path: './.env' });   
+require('dotenv').config({path: './.env' });
 const routesUsers = require('./routes/usersRoutes');
 const routesPosts = require('./routes/postsRoutes');
 const routesComments = require('./routes/commentsRoutes');
@@ -15,23 +15,28 @@ const path = require('path');
 
 const port = process.env.PORT;
 
+// middleware
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cors({
     origin: "http://localhost:3000"
 }))
+
+//serveur de fichiers statiques
 server.use('/public', express.static(path.join(__dirname, '/public')))
 
 // routes
-server.use('/user', routesUsers);
-server.use('/post', routesPosts);
+server.use('/users', routesUsers);
+server.use('/posts', routesPosts);
+
+//server.use('/comments', routesComments);
 
 // gestion des erreurs 404
 server.use(({ res }) => {
     const message = "Erreur 404 Impossible de trouver la ressource demandée !";
     res.status(404).json({ message });
   });
-// server.use('/comment', routesComments);
+
 
 // server.use(
 //   crud('/admin/users', {

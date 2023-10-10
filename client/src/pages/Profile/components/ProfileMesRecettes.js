@@ -23,7 +23,7 @@ const ProfileMesRecettes = () => {
 
   return (
     <div className={`${styles.list} d-flex flex-column`}>
-      <h2 className="text-center">Mes Recettes</h2>
+      <h2 className="d-flex justify-content-center mb-10">Mes Recettes</h2>
       {isLoading ? (
         <p>Chargement en cours...</p>
       ) : recipes.length === 0 ? (

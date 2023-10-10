@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./ProfileBio.module.scss";
 import { getUserInfo } from "../../../api/auth";
+import profilImage from "../../../assets/images/top-chiefs/img_6.jpg";
+
 
 function ProfileBio() {
   const [user, setUser] = useState(null);
-  const [coverPic, setCoverPic] = useState("https://via.placeholder.com/150");
-  const [profilPic, setProfilPic] = useState("https://via.placeholder.com/150");
   const [website, setWebsite] = useState("https://example.com");
 
   useEffect(() => {
@@ -21,53 +21,24 @@ function ProfileBio() {
     }
   }, []);
 
-  const handleCoverPicChange = (event) => {
-    setCoverPic(event.target.value);
-  };
-
-  const handleProfilPicChange = (event) => {
-    setProfilPic(event.target.value);
-  };
-
   const handleWebsiteChange = (event) => {
     setWebsite(event.target.value);
   };
 
   return (
-    <div className={`${styles.list} d-flex justify-content-center flex-column`}>
-      <h2 className="d-flex ">Ma Bio</h2>
-      <div className="d-flex flex-column my">
-        <label htmlFor="username">Username:</label>
+    <div className={`${styles.list} d-flex justify-content-center flex-column mt-10 mr-30`}>
+      <h2 className="d-flex justify-content-center "><span className={styles.name}>{user != null && user.username}</span></h2>
+      <div className="d-flex flex-column mb-20">
         <div className="d-flex">
-          <span>{user != null && user.username}</span>
+          <img src={profilImage} alt="profil" />
         </div>
       </div>
-      <div className="d-flex flex-column">
-        <label htmlFor="coverPic">Cover Picture:</label>
-        <div className="d-flex">
-          <input
-            type="text"
-            id="coverPic"
-            value={coverPic}
-            onChange={handleCoverPicChange}
-          />
-          <button>Edit</button>
-        </div>
+      <div className="d-flex flex-column my-30 mb-15">
+        <h4 className="username mb-15">Email:</h4>
+        <span className={styles.email}>{user != null && user.email}</span>
       </div>
       <div className="d-flex flex-column">
-        <label htmlFor="profilPic">Profile Picture:</label>
-        <div className="d-flex">
-          <input
-            type="text"
-            id="profilPic"
-            value={profilPic}
-            onChange={handleProfilPicChange}
-          />
-          <button>Edit</button>
-        </div>
-      </div>
-      <div className="d-flex flex-column">
-        <label htmlFor="website">Website:</label>
+        <label className={styles.label} htmlFor="website">Site internet:</label>
         <div className="d-flex">
           <input
             type="text"
@@ -75,7 +46,9 @@ function ProfileBio() {
             value={website}
             onChange={handleWebsiteChange}
           />
-          <button>Edit</button>
+          <button className=" mr-5 btn btn-reverse-primary">
+          <span>Ajouter</span>
+            </button>
         </div>
       </div>
     </div>

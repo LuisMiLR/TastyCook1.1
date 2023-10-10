@@ -1,14 +1,18 @@
 import axios from "axios";
 import env from "react-dotenv";
 
+
+//register 
 export const registerUser = async (data) => {
-  console.log(data);
+  
 
   await axios({
     method: "post",
     url: `${env.API_URL}/user/register`,
     data: data,
+    
   })
+  console.log("-------",data)
     .then((res) => {
       if (res.status === 200) {
         return res.data;
@@ -19,6 +23,7 @@ export const registerUser = async (data) => {
     });
 };
 
+//login
 export const loginUser = async (data) => {
   return await axios({
     method: "post",
@@ -37,8 +42,12 @@ export const loginUser = async (data) => {
     });
 };
 
-//recuperer l'user connecté
+//logout
+export const logoutUser = (res) => {
+  localStorage.removeItem("token");
+};
 
+//recuperer l'user connecté
 export const getUserInfo = async (token) => {
   return await axios({
     method: "get",
@@ -48,10 +57,11 @@ export const getUserInfo = async (token) => {
     },
   })
     .then((res) => {
-      console.log("---------res-------",res.data.user);
       return res.data.user
     })
     .catch((e) => {
       console.log(e.response.data.error);
     });
 };
+
+

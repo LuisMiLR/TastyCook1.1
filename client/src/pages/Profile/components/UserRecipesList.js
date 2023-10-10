@@ -21,9 +21,9 @@ function UserRecipesList() {
     }
   }, []);
 
-  async function deletePost(_id) {
-    await deleteR(_id);
-    setRecipes(recipes.filter((r) => r._id !== _id));
+  async function deletePost(id) {
+    await deleteR(id);
+    setRecipes(recipes.filter((r) => r.id !== id));
   }
 
   return (
@@ -35,8 +35,9 @@ function UserRecipesList() {
       ) : (
         recipes.map((recipe) => (
           <li key={recipe.id} className="d-flex align-items-center">
-            <span className="flex-fill">{recipe.title}</span>
-            <NavLink to={`../edit/${recipe._id}`}>
+            <img src={`http://localhost:8080/public/upload/posts/${recipe.img}`} alt={recipe.title} className={`mr-20 ${styles.image}`}></img>
+            <span className="flex-fill ml-45">{recipe.title}</span>
+            <NavLink to={`../edit/${recipe.id}`}>
               <button className="btn btn-primary mr-15">Editer</button>
             </NavLink>
             <button

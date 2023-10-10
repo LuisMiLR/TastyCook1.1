@@ -32,7 +32,7 @@ const Home = () => {
       <Header />
       <div className="flex-fill container d-flex flex-column p-20">
         <h1 className=" d-flex justify-content-center my-50">
-          Découvrez nos recettes délicieuses
+          Découvrez les recettes délicieuses et faciles
         </h1>
         <div
           className={`card flex-fill d-flex flex-column p-20 mb-20 ${styles.contentCard}`}
@@ -44,7 +44,6 @@ const Home = () => {
             <div className={styles.grid}>
               {posts
                 .filter((post) => {
-                  console.log(post);
                   return post.title.toLowerCase().startsWith(query);
                 })
                 .map((post) => (

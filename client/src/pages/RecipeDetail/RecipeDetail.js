@@ -15,7 +15,7 @@ const RecipeDetails = () => {
       .catch((e) => {
         console.log(e);
       });
-  }, [id]);
+  }, []);
 
   if (!recipe) {
     return <div>Loading...</div>;

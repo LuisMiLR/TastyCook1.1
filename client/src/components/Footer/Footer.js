@@ -5,7 +5,8 @@ function Footer() {
     <footer
       className={`${styles.footer} d-flex flex-row align-items-center justify-content-center p-20`}
     >
-      <p>Copyright © 2023 TastyCook By LuisMiLR</p>
+      <p className="mr-30">Copyright © 2023 TastyCook By LuisMiLR</p>  
+      
     </footer>
   );
 }

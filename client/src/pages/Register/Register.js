@@ -7,6 +7,7 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [city, setCity] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
@@ -16,16 +17,16 @@ const Register = () => {
       username,
       email,
       password,
+      city,
     };
-    console.log("------DATA---------", data);
-    if (username === "" || email === "" || password === "") {
+    if (!username || !email || !password ) {
       alert("Merci de renseigner les champs");
     } else {
       await registerUser(data)
-        .then(() => {
-          navigate("/login");
-        })
-        .catch((e) => {
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((e) => {
           console.log(e);
         });
     }
@@ -39,9 +40,9 @@ const Register = () => {
         <div className={`${styles.left} d-flex flex-column p-50`}>
           <h1>Social Cook</h1>
           <p>
-            Votre destination gourmande où se partage la passion pour la cuisine
-            bien faite accésible avec des plats simple et délicieux prennet vie.
-            Partagez, explorez et dégustez des recettes incroyables
+            Votre destination gourmande, partagez votre passion pour la cuisine
+            accésible avec des plats simple et délicieux !
+            Explorez et dégustez des recettes incroyables avec la communauté TastyCook.
           </p>
           <span>Avez-vous déjà un compte TastyCook ?</span>
           <Link to="/login">
@@ -57,7 +58,7 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
               type="text"
               name="username"
-              placeholder="Usernane"
+              placeholder="Nom utilisateur"
               autoComplete="username"
             />
             <input
@@ -76,10 +77,19 @@ const Register = () => {
               value={password}
               autoComplete="current-password"
             />
+            <input
+              onChange={(e) => setCity(e.target.value)}
+              type="text"
+              name="city"
+              placeholder="Ville de résidence"
+              value={city}
+              autoComplete="city"
+            />
             <button type="submit" className="btn btn-primary">
               register
             </button>
           </form>
+          <p>  Le mot de passe doit contenir au moins 8 caractères, dont une majuscule et un chiffre,</p>
         </div>
       </div>
     </div>
