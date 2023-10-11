@@ -6,7 +6,7 @@ import profilImage from "../../../assets/images/top-chiefs/img_6.jpg";
 
 function ProfileBio() {
   const [user, setUser] = useState(null);
-  const [website, setWebsite] = useState("https://example.com");
+  const [website, setWebsite] = useState("https://blog-perso.com");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
