@@ -1,0 +1,30 @@
+.profile-container {
+    display: flex;
+    flex-direction: column; // set flex direction to column
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column; // set flex direction to column
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-recipes {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column; // set flex direction to column
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-favorites {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column; // set flex direction to column
+    align-items: center;
+    justify-content: center;
+}

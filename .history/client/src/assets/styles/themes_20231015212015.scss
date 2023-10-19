@@ -1,0 +1,54 @@
+@use '../../assets/styles/mixins' as mixin;
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s opacity;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-2);
+    color: white;
+    font-size: 2 rem;
+    border: 2px solid var(--primary-2);
+  }
+  
+  .btn-reverse-primary {
+    border: 2px solid var(--primary);
+    color: var(--primary-2);
+    font-size: 2 rem;
+    background-color: white;
+  }
+  
+  .card {
+    border-radius: 20px;
+    background-color: white; 
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  
+  input {
+    padding: 10px 15px;
+    border: 2px solid var(--gray-2);
+    border-radius: 20px;
+  }
+  
+  .form-error {
+    margin: 0;
+    color: var(--red-1);
+    font-weight: 500;
+    font-size: 12px;
+  }
+  

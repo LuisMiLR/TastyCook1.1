@@ -1,0 +1,15 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+.profile-container {
+
+      @include mixin.xs {
+        width: 90%;
+      }
+    display: flex;
+    flex-direction: column; // set flex direction to column
+    align-items: center;
+    justify-content: center;
+}
+
+

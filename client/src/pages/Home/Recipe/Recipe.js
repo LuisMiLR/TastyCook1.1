@@ -14,7 +14,7 @@ function Recipe({ recipe}) {
         className={`fa-solid fa-thumbs-up ${recipe.liked ? "text-primary" : ""}`}
       ></i>
       </div>
-      <Link to={`/recipeDetail/${recipe.id} `} 
+      <Link to={`/post/${recipe.id} `} 
         className={`${styles.recipeTitle} d-flex flex-column justify-content-center align-items-center`}
       >
         <h3 className="mb-15">{recipe.title}</h3>

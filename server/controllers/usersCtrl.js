@@ -1,5 +1,4 @@
 const models = require("../models");
-const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtUtils = require("../middleware/jwtUtils");
@@ -167,6 +166,7 @@ module.exports = {
       .catch((e) => {
         return res.status(400).json({ message: "Utilisateur pas trouvé" });
       });
+      
   },
 };
 
