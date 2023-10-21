@@ -1,0 +1,25 @@
+
+.appContainer {
+    min-height: 100vh;
+  }
+
+  
+  .recipeDetails{
+    .contentCard {
+      max-width: 1130px;
+      width: 100%;
+      .imageContainer {
+        height: 300px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+    }
+
+  }
+  
+  .img-fluid {
+    width: 50%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+  }

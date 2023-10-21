@@ -1,0 +1,21 @@
+
+.appContainer {
+    min-height: 100vh;
+  }
+
+  .contentCard {
+    max-width: 1130px;
+    width: 100%;
+  }
+  
+  .imageContainer {
+    height: 350px;
+    overflow: hidden;
+  }
+  
+  .fluidPic {
+   max-width: 34%;
+  
+    overflow: hidden;
+    border-radius: 20px;
+  }

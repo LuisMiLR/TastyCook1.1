@@ -1,0 +1,48 @@
+
+// .appContainer {
+//     min-height: 100vh;
+//   }
+
+//   .contentCard {
+//     max-width: 1130px;
+//     width: 100%;
+//   }
+  
+//   .imageContainer {
+//     height: 350px;
+//     overflow: hidden;
+//   }
+  
+//   .fluidPic {
+//     max-width: 24%;
+//     border-radius: 20px;
+//   }
+
+// RecipeDetail.module.scss
+
+.appContainer {
+  min-height: 100vh;
+}
+
+.contentCard {
+  max-width: 1130px;
+  width: 100%;
+}
+
+.imageContainer {
+  height: 350px;
+  display: flex; // Utilisation de flexbox pour aligner les éléments horizontalement
+  overflow: hidden;
+}
+
+.fluidPic {
+  width: 350px; // Définissez la largeur fixe de l'image
+  height: 100%; // Remplissez la hauteur de l'image
+  object-fit: cover; // Pour que l'image s'ajuste pour remplir la zone définie
+  border-radius: 20px;
+}
+
+.descriptionContainer {
+  flex: 1; // Pour que la description prenne tout l'espace restant
+  padding: 20px; // Ajoutez de la marge pour l'espacement
+}

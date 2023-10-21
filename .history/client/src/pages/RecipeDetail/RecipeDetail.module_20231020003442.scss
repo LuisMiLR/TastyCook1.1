@@ -1,0 +1,104 @@
+// .appContainer {
+//     min-height: 100vh;
+//   }
+  .contentCard {
+    max-width: 1130px;
+    width: 100%;
+  }
+  
+  // .small {
+  //   font-size: 12px;
+  //   font-weight: 500;
+  // }
+
+  .appContainer {
+    min-height: 100vh;
+  }
+
+  .imageContainer {
+    height: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+   image{
+      transition: 1s transform;
+      width: 100%;
+    }
+   } 
+  }
+  .recipe {
+    position: relative;
+    border-radius: 20px;
+    height: 400px;
+  }
+
+
+
+
+// .recipe-details {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 20px;
+
+//     .recipe-image {
+//         width: 100%;
+//         max-width: 500px;
+//         margin-bottom: 20px;
+//     }
+
+//     .recipe-title {
+//         font-size: 24px;
+//         font-weight: bold;
+//         margin-bottom: 10px;
+//     }
+
+//     .recipe-description {
+//         font-size: 16px;
+//         margin-bottom: 20px;
+//     }
+
+//     .recipe-cooking-time {
+//         font-size: 14px;
+//         margin-bottom: 10px;
+//     }
+
+//     .recipe-comments {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         margin-bottom: 20px;
+
+//         .comment {
+//             width: 100%;
+//             max-width: 500px;
+//             padding: 10px;
+//             border: 1px solid #ccc;
+//             margin-bottom: 10px;
+
+//             .comment-author {
+//                 font-size: 14px;
+//                 font-weight: bold;
+//                 margin-bottom: 5px;
+//             }
+
+//             .comment-text {
+//                 font-size: 14px;
+//             }
+//         }
+//     }
+
+//     .recipe-likes {
+//         display: flex;
+//         align-items: center;
+
+//         .like-icon {
+//             font-size: 24px;
+//             margin-right: 10px;
+//         }
+
+//         .like-count {
+//             font-size: 16px;
+//         }
+//     }
+// }

@@ -1,0 +1,35 @@
+// RecipeDetail.module.scss
+
+.appContainer {
+  min-height: 100vh;
+}
+
+.contentCard {
+  max-width: 1130px;
+  width: 100%;
+}
+
+.imageDescriptionContainer {
+  display: flex;
+  height: 350px;
+  overflow: hidden;
+}
+
+.imageContainer {
+  width: 35;
+  overflow: hidden;
+}
+
+.fluidPic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.textContainer {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; // Organise les éléments en colonne
+}
