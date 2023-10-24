@@ -1,0 +1,34 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+
+.profile-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            display: block;
+    flex: none;
+        }
+    }
+    
+}
+//faire responsive design   
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            display: block;
+    flex: none;
+        }
+    }
+    
+}   
+
+// Path: client/src/pages/Profile/Profile.module.scss
+// Compare this snippet from client/src/assets/styles/_mixins.scss:
+// @mixin xs {
+    

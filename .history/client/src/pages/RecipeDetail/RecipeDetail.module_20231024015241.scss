@@ -1,0 +1,47 @@
+@use '../../assets/styles/mixins' as mixin;
+
+
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  // align-items: center;
+}
+
+.contentCard {
+  max-width: 1130px;
+  width: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+
+  @mixin md {
+    @media (min-width: 769px) and (max-width: 992px) {
+        @content;
+        flex-direction: column;
+    }
+}
+}
+
+.fluidPic {
+  width: 350px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  line-height: 2;
+}
+
+.minutes{
+  color:green;
+}
+
+

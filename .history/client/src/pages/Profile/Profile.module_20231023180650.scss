@@ -1,0 +1,26 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+.app-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+          
+        
+    
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+.profile-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            
+                flex-direction: column; // Change la direction en colonne
+                flex-wrap: wrap;
+        }
+    }
+}
+
+

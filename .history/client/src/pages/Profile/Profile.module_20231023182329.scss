@@ -1,0 +1,24 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+.app-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+.profile-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            display: flex;
+            
+        }
+    }
+    }
+
+
+

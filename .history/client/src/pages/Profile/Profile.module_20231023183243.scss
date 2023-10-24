@@ -1,0 +1,13 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+
+.profile-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            @content;
+        }
+    }
+    display: block;
+    flex: none;
+}

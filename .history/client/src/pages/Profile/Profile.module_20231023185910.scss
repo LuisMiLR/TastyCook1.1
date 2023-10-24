@@ -1,0 +1,22 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+
+
+//faire responsive design   
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            display: block;
+            
+        }
+    }
+    
+}   
+

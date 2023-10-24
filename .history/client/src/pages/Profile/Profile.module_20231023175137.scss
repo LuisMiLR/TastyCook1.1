@@ -1,0 +1,23 @@
+
+@use '../../assets/styles/mixins' as mixin;
+
+
+@mixin lg-lt {
+    @media (max-width: 1200px)  {
+        .profileContainer {
+            flex-direction: column; // Change la direction en colonne
+          }
+    }
+}
+
+.profile-container {
+    @mixin lg-lt {
+        @media (max-width: 1200px)  {
+            .profileContainer {
+                flex-direction: column; // Change la direction en colonne
+              }
+        }
+    }
+}
+
+

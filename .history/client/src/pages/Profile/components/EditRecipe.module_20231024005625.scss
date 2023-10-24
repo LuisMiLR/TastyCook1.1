@@ -1,0 +1,78 @@
+@use '../../../assets/styles/mixins' as mixin;
+
+.recipeForm {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .card {
+      width: 80%;
+      background-color: rgb(255, 255, 255);
+      border-radius: 20px;
+
+      margin: 20px;
+      overflow: hidden;
+      width: 600px;
+      max-height: 63vh;   
+
+      @include mixin.sm-lt {
+        width: 90%;
+        margin: none;
+      }
+  }
+  
+  .design {
+      // flex: 1;
+     
+    
+  
+    form {
+      gap: 10px;
+  
+      input {
+        padding: 10px 15px;
+        border: 2px solid var(--gray-3);
+        border-radius: 20px;
+        width: 100%;
+
+        
+        @include mixin.xs {
+        width: 90%;
+      }
+      
+      }
+    }
+     
+     button {
+        width: 50%;
+        
+        @include mixin.xs {
+          width: 90%;
+        }
+     }
+  }    
+
+  input[type="file"] {
+    // cacher le bouton de sélection de fichier
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+    &::file-selector-button {
+      // ajouter un arrière-plan et une bordure au bouton de sélection de fichier
+      background-color: #fff;
+      border: 1.5px solid var(--primary-2);
+      padding: 5px 15px;
+      border-radius: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+      // ajouter une ombre au survol du bouton de sélection de fichier
+      &:hover {
+        background-color: var(--primary-2);
+        transition: 5ms;
+        color: white;
+       
+      }
+    }
+  }
+  
+  
