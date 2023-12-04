@@ -1,0 +1,9 @@
+button {
+    width: 50%;
+    
+    @include mixin.xs {
+      width: 90%;
+    }
+ }
+}   
+  

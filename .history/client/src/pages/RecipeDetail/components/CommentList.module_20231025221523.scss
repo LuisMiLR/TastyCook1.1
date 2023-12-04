@@ -1,0 +1,11 @@
+input {
+    padding: 10px 15px;
+    border: 2px solid var(--gray-3);
+    border-radius: 20px;
+    width: 100%;
+
+    
+    @include mixin.xs {
+    width: 90%;
+  }
+}
