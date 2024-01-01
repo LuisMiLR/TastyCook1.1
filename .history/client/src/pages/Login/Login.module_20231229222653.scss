@@ -1,13 +1,11 @@
 @use "../../assets/styles/mixins" as mixin;
 
 .login {
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 
   .card {
-    width: 60%;
+    width: 50%;
     display: flex;
     background-color: white;
     border-radius: 20px;
@@ -63,7 +61,6 @@
 
     .right {
       flex: 1;
-      padding: 60px;
       gap: 50px;
 
       form {
@@ -81,7 +78,10 @@
 
         button {
           width: 50%;
-          cursor: pointer;
+          //   padding: 10px;
+          //   border: none;
+          //   background-color: #938eef;
+          //   cursor: pointer;
         }
       }
     }
